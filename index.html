@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Timer.css">
+    <link rel="stylesheet" href="css/Card.css">
+    <link rel="stylesheet" href="css/chooseColor.css">
+    <link rel="stylesheet" href="css/TakiPopup.css">
+    <link rel="stylesheet" href="css/endGame.css">
+
+</head>
+<body>
+<div>
+    <div id="topBar">
+        <div id="topBarFirstRow">
+
+            <div class="topBarItemFirstRow">
+                Avg move time
+                <div class="topBarItemSecondRow" id="avgMoveTime">00:00:00</div>
+            </div>
+            <div class="topBarItemFirstRow" id="totalAvgMoveTimeHeader">
+                <div class="topBarItemSecondRow" id="totalAvgMoveTime"></div>
+            </div>
+            <div class="topBarItemFirstRow">
+                Reached last card
+                <div class="topBarItemSecondRow" id="reachedLastCard">0</div>
+            </div>
+            <div class="topBarItemFirstRow">
+                Total moves
+                <div class="topBarItemSecondRow" id="totalMoves">0</div>
+            </div>
+            <div class="topBarItemFirstRow">
+                Time elapsed
+                <div class="topBarItemSecondRow">   <span id="timer" class="topBarItem">00:00</span></div>
+            </div>
+        </div>
+        <div id="topBarSecondRow">
+            <div class="topBarItemFirstRow">
+                <button class="surrender-button" onclick="surrender(event)">surrender</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent">
+        <div id="popup">
+            <div class="popupContent">
+                <div id="changeColorPopupContainer">
+                    <div class="popupHeader">Color Chooser </div>
+                    <div class="colorOption" color="blue" id="squareBlue"></div>
+                    <div class="colorOption" color="green" id="squareGreen"></div>
+                    <div class="colorOption" color="yellow" id="squareYellow"></div>
+                    <div class="colorOption" color="red" id="squareRed"></div>
+                </div>
+                <div id="endGamePopupContainer" display="none">
+                    <div class="endGamePopupHeader">Game Statistics</div>
+                    <div class="endGamePopupBody" color="blue">
+                        <div id="winner"></div>
+                        <div id="endGameStats">
+                            <div id="myStats">
+                                <div id="myStatHeader">My Stats</div>
+                                <div id="myTotalAvgMoveTime" class="myStatsInfo"></div>
+                                <div id="myAvgMoveTime" class="myStatsInfo"></div>
+                                <div id="myReachedLast" class="myStatsInfo"></div>
+                                <div id="myTotalMoves" class="myStatsInfo"></div>
+                            </div>
+                            <div id="algoStats">
+                                <div id="algoStatHeader">Algo Stats</div>
+                                <div id="algoTotalAvgMoveTime" class="algoStatsInfo"></div>
+                                <div id="algoAvgMoveTime" class="algoStatsInfo"></div>
+                                <div id="algoReachedLast" class="algoStatsInfo"></div>
+                                <div id="algoTotalMoves" class="algoStatsInfo"></div>
+                            </div>
+                        </div>
+                        <button id="restart-button" hidden="true" onclick="restartGame(event)" >restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardsRowAlgo"></div>
+        <div class="gameDeckRow">
+            <div id="turnIndicatorContainer">
+                <div class="turnIndicator"></div>
+                <div class="takiInteractionActive"></div>
+            </div>
+                <div class="potContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="pot"></div>
+            </div>
+            <div class="gameDeckContainer">
+                <span id="takeCard">Draw Card</span>
+                <div class="gameDeck"></div>
+            </div>
+        </div>
+        <div class="cardsRowPlayer"></div>
+    </div>
+</div>
+</body>
+<script src="js/Card.js"></script>
+<script src="js/Player.js"></script>
+<script src="js/Timer.js"></script>
+<script src="js/GameManager.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chooseColorPopup.js"></script>
+<script src="js/takiPopup.js"></script>
+<script src="js/endGamePopup.js"></script>
+
+
+</html>

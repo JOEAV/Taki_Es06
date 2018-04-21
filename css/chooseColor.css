@@ -1,0 +1,213 @@
+#popup{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 500; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+
+}
+.popupContent{
+    position: relative;
+    background-color: #3498db;
+    margin: auto;
+    top:33%;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),0 6px 20px 0 rgba(0,0,0,0.4);
+    animation-name: animatetop;
+    transition: 400ms ease-out;
+    animation-duration:500ms;
+    height:25%;
+    min-width: 300px;
+    min-height: 300px;
+    max-height:300px;
+    border-radius:10px 10px;
+    font-family:roboto;
+}
+
+.popupHeader{
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
+    align-items:center;
+    position:relative;
+    overflow: hidden;
+    border-radius:8px 8px 0 0;
+    width:100%;
+    height:5%;
+    padding:34px;
+    background-color:#303F9F;
+    color:white;
+    font-size:1.5em;
+}
+
+.popupAction{
+
+    width:30%;
+    height:100%;
+    left:50%;
+    position:absolute;
+}
+
+#squareBlue{
+    display: inline-block;
+    width:50%;
+    height:37.4%;
+    background-color:#3498db;
+    position:absolute;
+    top:22.7%;
+
+
+}
+
+#squareGreen{
+    display: inline-block;
+    width:50%;
+    height:37.4%;
+    background-color:#2ecc71;
+    position:absolute;
+    left:50%;
+    top:22.7%;
+
+
+}
+
+#squareYellow{
+    display: inline-block;
+    width:50%;
+    height:40%;
+    background-color:#f1c40f;
+    position:absolute;
+    left:0;
+    top:60.0%;
+    border-radius:0 0 0 8px;
+
+}
+#squareRed{
+    content: "";
+    display: inline-block;
+    width:50%;
+    height:40%;
+    background-color:#e74c3c;
+    position:absolute;
+    left:50%;
+    top:60.0%;
+    border-radius:0 0 8px 0;
+
+}
+
+@keyframes animatetop {
+    from {top:-500px; opacity:0}
+    to {top:33%; opacity:1}
+}
+
+#squareRed:hover{
+
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+
+}
+#squareRed:after{
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+    opacity:0;
+    text-align:center;
+    position:absolute;
+    height:100%;
+    width:100%;
+    line-height:110px;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,0.75);
+}
+#squareRed:hover::after{
+    opacity: 1;
+    transition:200ms ease-out;
+}
+#squareGreen:hover{
+
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+
+    /*border:1px white solid;*/
+    /*border-radius:10px 10px;*/
+}
+#squareGreen:after{
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+    opacity:0;
+    text-align:center;
+    position:absolute;
+    height:100%;
+    width:100%;
+    /*border:2px white solid;*/
+    line-height:110px;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,0.75);
+}
+#squareGreen:hover::after{
+    opacity: 1;
+    transition:200ms ease-out;
+}
+#squareYellow:hover{
+
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+
+    /*border:1px white solid;*/
+    /*border-radius:10px 10px;*/
+}
+#squareYellow:after{
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+    opacity:0;
+    text-align:center;
+    position:absolute;
+    height:100%;
+    width:100%;
+    /*border:2px white solid;*/
+    line-height:110px;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,0.75);
+}
+#squareYellow:hover::after{
+    opacity: 1;
+    transition:200ms ease-out;
+}
+#squareBlue:hover{
+
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+
+    /*border:1px white solid;*/
+    /*border-radius:10px 10px;*/
+}
+#squareBlue:after{
+    content:"Choose";
+    color:white;
+    font-family: Roboto;
+    opacity:0;
+    text-align:center;
+    position:absolute;
+    height:100%;
+    width:100%;
+    /*border:2px white solid;*/
+    line-height:110px;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,0.75);
+}
+#squareBlue:hover::after{
+    opacity: 1;
+    transition:200ms ease-out;
+}
+@keyframes hoveredColor{
+    from{background-color:#e74c3c;opacity:1}
+    to{background-color:black;opacity:1}
+}
+
+

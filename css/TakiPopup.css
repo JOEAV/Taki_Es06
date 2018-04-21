@@ -1,0 +1,98 @@
+
+.takiInteractionActive{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color:black;
+    transition:200ms all ease-in-out;
+    padding-right:30px;
+    left:-20%;
+    top:8%;
+    z-index:10;
+
+}
+
+
+
+.scaleColorAnimationBLUE{
+
+    transform:scale(20);
+    background-color: #3498db;
+}
+.scaleColorAnimationRED {
+
+    transform:scale(20);
+    background-color:#e74c3c;
+}
+.scaleColorAnimationYELLOW {
+
+    transform:scale(20);
+    background-color:#f1c40f;
+}
+.scaleColorAnimationGREEN {
+
+    transform:scale(20);
+    background-color: #2ecc71;
+}
+
+.turnIndicatorTakiOn{
+    position:relative;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    right:20%;
+    color:white;
+    font-family:roboto;
+    text-align: center;
+
+    font-size:1.5em;
+    /*padding:30px;*/
+    border:3px solid white;
+    background-color:#222f3e;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,1),0 8px 16px 0 rgba(0, 0, 0, 0.2);;
+
+
+}
+
+.turnIndicatorTakiOn:before{
+    content:' End Turn \A Click Here';
+    white-space:pre;
+    display:inline-block ;
+    width:100%;
+    left:0;
+    position: absolute;
+    top:4%;
+    padding-top:60px;
+    text-align: center;
+}
+
+
+.turnIndicatorTakiOn:hover{
+    border:5px solid white;
+    transition: 200ms ease-out all;
+    background-color:#5f27cd;
+    padding-top: 50px;
+    box-shadow: inset 3px 1px 53px 3px rgba(0,0,0,1),1px 8px 16px 0 rgba(0, 0, 0, 0.5);;
+
+}
+
+
+.turnIndicator{
+    position:relative;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color:white;
+    right:20%;
+    color:blue;
+    padding-right:30px;
+    background-size:contain;
+    background-position: bottom center;
+    background-position-y: 10px;
+    background-repeat: no-repeat;
+    transition:200ms all ease-out;
+
+}
+
+

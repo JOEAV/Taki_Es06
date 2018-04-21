@@ -1,0 +1,872 @@
+@media only screen  and (min-width:1400px) {
+    *, *::before, *::after {
+        box-sizing: border-box;
+
+    }
+
+    :root {
+        --card-border-width: 5px;
+        --bounce-amplitude: 40px;
+        --cardHeight: 144px;
+        --cardWidth: 91px;
+    }
+
+    .cardWrapper {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: var(--cardWidth);
+        position :relative;
+        transition:0.2s;
+        border-radius: 8px 8px 8px 8px;
+    }
+
+    .cardBase{
+        display:inline-block;
+        width:100%;
+        padding-bottom:158.0%;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .cardPlayer{
+    }
+
+    .cardPlayer:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(calc(-1 * var(--bounce-amplitude)));
+        transition:0.2s all;
+    }
+
+
+    .cardWrapper:after{
+        display:inline-block;
+        position:absolute;
+        top:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+
+    .cardPlayer:hover::after{
+        height:var( --bounce-amplitude);
+    }
+
+    .cardsRowPlayer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        width: 65%;
+        height:200px;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+    }
+
+    .cardsRowAlgo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 65%;
+        flex-grow:10;
+        flex-shrink:10;
+        flex-flow: row wrap;
+        min-height:146px;
+
+    }
+
+    .pot{
+        display: flex;
+        flex-direction: row;
+        width:var(--cardWidth * 2);
+        justify-content: center;
+        height:var(--cardHeight);
+        position:absolute;
+        left:15%;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+    }
+
+    .potFadeInAnimation{
+        animation-name:revealDropLocation;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .potContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .gameDeckContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        left:70%;
+        border-radius: 12px 12px;
+
+    }
+
+    .gameDeck{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:var(--cardWidth);
+        height:var(--cardHeight);
+        position:absolute;
+        margin-left:20%;
+        right:50%;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+    }
+    .cardInsidePot{
+
+    }
+    .gameDeckRow {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        height:325px;
+        width:100%;
+    }
+
+    .cardInsideGameDeck{
+        margin-left:0;
+        margin-right:-90px;
+    }
+    .cardInsideCardRow{
+        margin-left:5px;
+        margin-right:-100px;
+    }
+    .cardInsideCardRowAfterSpread{
+        margin-left:5px;
+        margin-right:0;
+    }
+    .cardAllowedCue{
+        border:3px solid lawngreen;
+    }
+    .cardNotAllowedCue{
+        border:3px solid orangered;
+    }
+    #takeCard{
+        font-size:2em;
+        opacity: 0;
+    }
+    .drawCardTextAnimation{
+        animation-name:revealDrawCardText;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .topCardInGameDeck{
+
+    }
+    .topCardInGameDeck::before{
+        display:inline-block;
+        position:absolute;
+        bottom:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+    .topCardInGameDeck:hover{
+      transform:translate(0px,40px);
+
+    }
+    .topCardInGameDeck:hover::before{
+        height:var( --bounce-amplitude);
+    }
+    @keyframes revealDropLocation {
+
+           from{
+               border-color:transparent;
+           }
+           to{
+               border-color:white;
+           }
+       }
+
+    @keyframes revealDrawCardText {
+
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:100;
+        }
+    }
+}
+
+@media only screen  and (max-width:1400px) and (min-width:1000px){
+    *, *::before, *::after {
+        box-sizing: border-box;
+
+    }
+
+    :root {
+        --card-border-width: 5px;
+        --bounce-amplitude: 40px;
+        --cardHeight: 144px;
+        --cardWidth: 91px;
+    }
+
+    .cardWrapper {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: var(--cardWidth);
+        position :relative;
+        transition:0.2s;
+        border-radius: 8px 8px 8px 8px;
+        transform: scale(0.75);
+    }
+
+    .cardBase{
+        display:inline-block;
+        width:100%;
+        padding-bottom:158.0%;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .cardPlayer{
+    }
+
+    .cardPlayer:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(calc(-1 * var(--bounce-amplitude)));
+        transition:0.2s all;
+    }
+
+
+    .cardWrapper:after{
+        display:inline-block;
+        position:absolute;
+        top:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+
+    .cardPlayer:hover::after{
+        height:var( --bounce-amplitude);
+    }
+
+    .cardsRowPlayer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        width: 100%;
+        height:200px;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+    }
+
+    .cardsRowAlgo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+        min-height:146px;
+        margin-bottom:50px;
+
+    }
+
+    .pot{
+        display: flex;
+        flex-direction: row;
+        width:var(--cardWidth * 2);
+        justify-content: center;
+        height:var(--cardHeight);
+        position:absolute;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .potFadeInAnimation{
+        animation-name:revealDropLocation;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .potContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .gameDeckContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        border:3px solid black;
+        left:80%;
+        border-radius: 12px 12px;
+        transform:scale(0.60);
+
+    }
+
+    .gameDeck{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:var(--cardWidth);
+        height:var(--cardHeight);
+        position:absolute;
+        right:50%;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+        transform:scale(2.5)
+    }
+
+    .gameDeckRow {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        height:150px;
+        transform: scale(0.75);
+        width:100%;
+    }
+
+    .cardInsideGameDeck{
+        margin-left:0;
+        margin-right:-90px;
+
+    }
+    .cardInsideCardRow{
+        margin-left:5px;
+        margin-right:-100px;
+    }
+    .cardInsideCardRowAfterSpread{
+        margin-left:-25px;
+        margin-right:0;
+    }
+    .cardAllowedCue{
+        border:3px solid lawngreen;
+    }
+    .cardNotAllowedCue{
+        border:3px solid orangered;
+    }
+    #takeCard{
+        font-size:2em;
+        opacity: 0;
+    }
+    .drawCardTextAnimation{
+        animation-name:revealDrawCardText;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .topCardInGameDeck{
+
+    }
+    .topCardInGameDeck::before{
+        display:inline-block;
+        position:absolute;
+        bottom:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+    .topCardInGameDeck:hover{
+        transform:translate(0px,40px);
+
+    }
+    .topCardInGameDeck:hover::before{
+        height:var( --bounce-amplitude);
+    }
+    @keyframes revealDropLocation {
+
+        from{
+            border-color:transparent;
+        }
+        to{
+            border-color:white;
+        }
+    }
+
+    @keyframes revealDrawCardText {
+
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:100;
+        }
+    }
+    .cardInsidePot{
+        transform:scale(1.5);
+
+    }
+}
+@media only screen  and (max-width:1200px) and (min-width:800px){
+    *, *::before, *::after {
+        box-sizing: border-box;
+
+    }
+
+    :root {
+        --card-border-width: 5px;
+        --bounce-amplitude: 40px;
+        --cardHeight: 144px;
+        --cardWidth: 91px;
+    }
+
+    .cardWrapper {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: var(--cardWidth);
+        position :relative;
+        transition:0.2s;
+        border-radius: 8px 8px 8px 8px;
+        transform: scale(0.77);
+    }
+
+    .cardBase{
+        display:inline-block;
+        width:100%;
+        padding-bottom:158.0%;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .cardPlayer{
+    }
+
+    .cardPlayer:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(calc(-1 * var(--bounce-amplitude)));
+        transition:0.2s all;
+    }
+
+
+    .cardWrapper:after{
+        display:inline-block;
+        position:absolute;
+        top:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+
+    .cardPlayer:hover::after{
+        height:var( --bounce-amplitude);
+    }
+
+    .cardsRowPlayer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        width: 100%;
+        height:200px;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+    }
+
+    .cardsRowAlgo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+        min-height:146px;
+        margin-bottom:50px;
+
+    }
+
+    .pot{
+        display: flex;
+        flex-direction: row;
+        width:var(--cardWidth * 2);
+        justify-content: center;
+        height:var(--cardHeight);
+        position:absolute;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .potFadeInAnimation{
+        animation-name:revealDropLocation;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .potContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .gameDeckContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        left:80%;
+        border-radius: 12px 12px;
+        transform:scale(0.60);
+
+    }
+
+    .gameDeck{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:var(--cardWidth);
+        height:var(--cardHeight);
+        position:absolute;
+        right:50%;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+        transform:scale(2.5)
+    }
+
+    .gameDeckRow {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        height:150px;
+        transform: scale(0.75);
+        width:100%;
+    }
+
+    .cardInsideGameDeck{
+        margin-left:0;
+        margin-right:-90px;
+
+    }
+    .cardInsideCardRow{
+        margin-left:5px;
+        margin-right:-100px;
+    }
+    .cardInsideCardRowAfterSpread{
+        margin-left:-25px;
+        margin-right:0;
+    }
+    .cardAllowedCue{
+        border:3px solid lawngreen;
+    }
+    .cardNotAllowedCue{
+        border:3px solid orangered;
+    }
+    #takeCard{
+        font-size:2em;
+        opacity: 0;
+    }
+    .drawCardTextAnimation{
+        animation-name:revealDrawCardText;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .topCardInGameDeck{
+
+    }
+    .topCardInGameDeck::before{
+        display:inline-block;
+        position:absolute;
+        bottom:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+    .topCardInGameDeck:hover{
+        transform:translate(0px,40px);
+
+    }
+    .topCardInGameDeck:hover::before{
+        height:var( --bounce-amplitude);
+    }
+    @keyframes revealDropLocation {
+
+        from{
+            border-color:transparent;
+        }
+        to{
+            border-color:white;
+        }
+    }
+
+    @keyframes revealDrawCardText {
+
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:100;
+        }
+    }
+    .cardInsidePot{
+        transform:scale(1.5);
+
+    }
+}
+@media only screen  and (max-width:800px) {
+    *, *::before, *::after {
+        box-sizing: border-box;
+
+    }
+
+    :root {
+        --card-border-width: 5px;
+        --bounce-amplitude: 40px;
+        --cardHeight: 144px;
+        --cardWidth: 91px;
+    }
+
+    .cardWrapper {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: var(--cardWidth);
+        position :relative;
+        transition:0.2s;
+        border-radius: 8px 8px 8px 8px;
+        transform: scale(0.55);
+    }
+
+    .cardBase{
+        display:inline-block;
+        width:100%;
+        padding-bottom:158.0%;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .cardPlayer{
+    }
+
+    .cardPlayer:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(calc(-1 * var(--bounce-amplitude)));
+        transition:0.2s all;
+    }
+
+
+    .cardWrapper:after{
+        display:inline-block;
+        position:absolute;
+        top:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+
+    .cardPlayer:hover::after{
+        height:var( --bounce-amplitude);
+    }
+
+    .cardsRowPlayer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        width: 100%;
+        height:200px;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+    }
+
+    .cardsRowAlgo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-grow:8;
+        flex-shrink:8;
+        flex-flow: row wrap;
+        min-height:146px;
+
+    }
+
+    .pot{
+        display: flex;
+        flex-direction: row;
+        width:var(--cardWidth * 2);
+        justify-content: center;
+        height:var(--cardHeight);
+        position:absolute;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .potFadeInAnimation{
+        animation-name:revealDropLocation;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .potContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+
+    }
+
+    .gameDeckContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: calc(var(--cardWidth)*2);
+        height:  calc(var(--cardHeight)*1.51);
+        position:absolute;
+        left:80%;
+        border-radius: 12px 12px;
+        transform:scale(0.60);
+
+    }
+
+    .gameDeck{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:var(--cardWidth);
+        height:var(--cardHeight);
+        position:absolute;
+        right:50%;
+        top:21%;
+        border:3px solid transparent;
+        border-radius: 12px 12px;
+        transform:scale(2.5)
+    }
+
+    .gameDeckRow {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position:relative;
+        height:150px;
+        transform: scale(0.70);
+        width:100%;
+    }
+
+    .cardInsideGameDeck{
+        margin-left:0;
+        margin-right:-90px;
+
+    }
+    .cardInsideCardRow{
+        margin-left:5px;
+        margin-right:-100px;
+    }
+    .cardInsideCardRowAfterSpread{
+        margin-left:-50px;
+        margin-right:0;
+    }
+    .cardAllowedCue{
+        border:3px solid lawngreen;
+    }
+    .cardNotAllowedCue{
+        border:3px solid orangered;
+    }
+    #takeCard{
+        font-size:2em;
+        opacity: 0;
+    }
+    .drawCardTextAnimation{
+        animation-name:revealDrawCardText;
+        animation-duration : 1000ms;
+        animation-iteration-count: infinite;
+    }
+
+    .topCardInGameDeck{
+
+    }
+    .topCardInGameDeck::before{
+        display:inline-block;
+        position:absolute;
+        bottom:100%;
+        content:'';
+        height:0;
+        width:100%;
+        left:0;
+    }
+    .topCardInGameDeck:hover{
+        transform:translate(0px,40px);
+
+    }
+    .topCardInGameDeck:hover::before{
+        height:var( --bounce-amplitude);
+    }
+    @keyframes revealDropLocation {
+
+        from{
+            border-color:transparent;
+        }
+        to{
+            border-color:white;
+        }
+    }
+
+    @keyframes revealDrawCardText {
+
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:100;
+        }
+    }
+    .cardInsidePot{
+        transform:scale(1.5);
+
+    }
+}
+
+
